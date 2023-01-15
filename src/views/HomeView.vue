@@ -1,18 +1,43 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <tree-menu v-bind="tree" />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import TreeMenu from '@/components/TreeMenu.vue';
 export default {
-  name: 'HomeView',
   components: {
-    HelloWorld
-  }
-}
+    TreeMenu,
+  },
+  data() {
+    return {
+      tree: {
+        label: 'root',
+        depth: 0,
+        nodes: [
+          {
+            label: 'item1',
+            nodes: [
+              {
+                label: 'item1.1',
+              },
+              {
+                label: 'item1.2',
+                nodes: [
+                  {
+                    label: 'item1.2.1',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            label: 'item2',
+          },
+        ],
+      },
+    };
+  },
+};
 </script>
+
+<style scoped lang="scss"></style>
