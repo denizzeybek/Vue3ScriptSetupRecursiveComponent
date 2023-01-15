@@ -1,4 +1,8 @@
 # recursivecomponents
+```
+In this project, it is aimed to show a data that comes in a recursive way in an indent way by using Vue 3 script setup.
+```
+
 
 ## Project setup
 ```
